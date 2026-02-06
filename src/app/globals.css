@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-zodiac-black: #0a0a0a;
+  --color-zodiac-charcoal: #1a1a1a;
+  --color-zodiac-gold: #a08060;
+  /* Muted bronze/copper - more "stone" feel */
+  --color-zodiac-concrete: #2a2a2a;
+  --color-zodiac-white: #ededed;
+
+  /* Subtle earth accents - use sparingly */
+  --color-zodiac-terracotta: #8b5a3c;
+  /* Burnt sienna */
+  --color-zodiac-moss: #4a5240;
+  /* Deep olive/moss */
+  --color-zodiac-slate: #5a5a6a;
+  /* Cool stone */
+
+  --font-serif: var(--font-cormorant), serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-zh-serif: var(--font-noto-serif-tc), serif;
+}
+
+body {
+  background-color: var(--background);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .custom-scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .custom-scrollbar-none {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+
+@layer base {
+
+  /* Global Scrollbar Hide */
+  * {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Default to Dark Mode Vibe (Monolith) even in :root */
+  --radius: 0.2rem;
+  /* Sharper industrial feel */
+
+  /* Backgrounds: Zodiac Black */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  /* Cards: Glassy Concrete/Charcoal */
+  --card: #111111;
+  --card-foreground: #ededed;
+
+  /* Popovers */
+  --popover: #0a0a0a;
+  --popover-foreground: #ededed;
+
+  /* Primary: Zodiac Gold */
+  --primary: #a08060;
+  --primary-foreground: #000000;
+
+  /* Secondary: Muted Stone */
+  --secondary: #2a2a2a;
+  --secondary-foreground: #ededed;
+
+  /* Muted: Subtle Dividers */
+  --muted: #2a2a2a;
+  --muted-foreground: #777777;
+
+  /* Accent: Hover states (Slightly lighter black) */
+  --accent: #222222;
+  --accent-foreground: #a08060;
+  /* Gold text on hover */
+
+  /* Destructive */
+  --destructive: #7f1d1d;
+  --destructive-foreground: #ededed;
+
+  /* Borders: Very subtle */
+  --border: #222222;
+  --input: #222222;
+  --ring: #a08060;
+
+  /* Charts - Keeping Shadcn defaults for now, can map later */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  /* Sidebar */
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ededed;
+  --sidebar-primary: #a08060;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #222222;
+  --sidebar-accent-foreground: #a08060;
+  --sidebar-border: #222222;
+  --sidebar-ring: #a08060;
+}
+
+/* Force Dark Mode aesthetic everywhere */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #111111;
+  --card-foreground: #ededed;
+  --popover: #0a0a0a;
+  --popover-foreground: #ededed;
+  --primary: #a08060;
+  --primary-foreground: #000000;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #ededed;
+  --muted: #2a2a2a;
+  --muted-foreground: #777777;
+  --accent: #222222;
+  --accent-foreground: #a08060;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #ededed;
+  --border: #222222;
+  --input: #222222;
+  --ring: #a08060;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ededed;
+  --sidebar-primary: #a08060;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #222222;
+  --sidebar-accent-foreground: #a08060;
+  --sidebar-border: #222222;
+  --sidebar-ring: #a08060;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
