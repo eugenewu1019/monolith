@@ -9,7 +9,8 @@
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**Architecture of Taste. Ephemeral Sculpture.**
+**Architecture of Taste. Ephemeral Sculpture.**  
+**品味的建築。轉瞬的雕塑。**
 
 [Live Demo](https://eugenewu1019.github.io/monolith/) · [Report Bug](https://github.com/eugenewu1019/monolith/issues) · [Request Feature](https://github.com/eugenewu1019/monolith/issues) · [Discussions](https://github.com/eugenewu1019/monolith/discussions)
 
@@ -39,7 +40,7 @@
 
 **MONOLITH** is a high-end, immersive concept website for a fictional pastry brand that merges geology with gastronomy. The project explores the intersection of **"Vibe Coding"** and performance-driven web engineering.
 
-**MONOLITH** 是一個極具沉浸感的概念網站，為一個將「地質學」與「甜點工藝」結合的虛構高端品牌而生。本專案旨在探索 **「氛圍編碼 (Vibe Coding)」** 與高效能網頁工程的交會點。
+**MONOLITH** 是一個極具沉浸感的概念網站,為一個將「地質學」與「甜點工藝」結合的虛構高端品牌而生。本專案旨在探索 **「氛圍編碼 (Vibe Coding)」** 與高效能網頁工程的交會點。
 
 ### Why This Project?
 
@@ -53,27 +54,31 @@
 
 ## ✨ Key Features
 
-### 🌍 Bilingual First
+### 🌍 Bilingual First | 雙語優先
 - Complete i18n implementation with custom `useLocale` hook
 - Instant language switching (English / Traditional Chinese)
 - SEO-optimized metadata for both languages
+- 完整的國際化實作,支援即時語言切換(英文/繁體中文)
 
-### 💎 Immersive Horizontal Gallery
+### 💎 Immersive Horizontal Gallery | 沉浸式橫向藝廊
 - **Scroll-Jacked Motion**: Smooth horizontal navigation that feels like an exhibition walkthrough
 - **Parallax Depth**: Layers of geological textures with 3D parallax effects
 - **Optimized Performance**: RequestAnimationFrame-based smooth scrolling
+- 橫向滾動式導覽,搭配多層次 3D 視差效果
 
-### 🧠 AI Sommelier Quiz
+### 🧠 AI Sommelier Quiz | AI 風味測驗
 - **Physics-Based Interaction**: Spring-physics modals powered by Framer Motion
 - **Weighted Preference Matching**: Smart algorithm for personalized recommendations
 - **Multi-dimensional Profiling**: Mood, flavor, texture, and occasion analysis
+- 物理感互動介面與智慧推薦演算法
 
-### 🌒 Immersive Dark Theme
+### 🌒 Immersive Dark Theme | 極黑美學
 - **Zodiac Palette**: Curated dark mode with "Zodiac Black" and "Zodiac Gold" tokens
 - **Micro-glow Effects**: Subtle light bleeds and mesh gradients
 - **Natural Aesthetics**: Inspired by mineral veins and geological formations
+- 定製配色方案搭配微光暈染效果
 
-### 🚀 Performance & Accessibility
+### 🚀 Performance & Accessibility | 效能與無障礙
 - Lazy loading and code splitting
 - Image optimization with Next.js Image
 - WCAG 2.1 AA compliant
@@ -342,23 +347,6 @@ Special thanks to these amazing projects and resources:
 - [Lucide Icons](https://lucide.dev/) - Beautiful icons
 - [Lenis](https://github.com/darkroomengineering/lenis) - Smooth scroll
 - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) - 3D graphics
-
----
-
-## 📊 Project Status
-
-- [x] Core features implemented
-- [x] Bilingual support (EN/ZH)
-- [x] Responsive design
-- [x] Dark mode
-- [x] CI/CD pipeline
-- [ ] Storybook documentation
-- [ ] E2E testing
-- [ ] CMS integration
-- [ ] Admin dashboard
-- [ ] PWA support
-
-See [Roadmap](https://github.com/eugenewu1019/monolith/issues) for more details.
 
 ---
 
