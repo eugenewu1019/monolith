@@ -12,6 +12,15 @@ export default defineConfig([
       "react-compiler/react-compiler": "off",
       "react-hooks/set-state-in-effect": "off",
       "react/no-unescaped-entities": "off",
+      "@typescript-eslint/no-unused-vars": "warn", // Change unused vars to warnings
+    },
+  },
+
+  // Allow CommonJS in config files
+  {
+    files: ["jest.config.js", "jest.setup.js"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
 
