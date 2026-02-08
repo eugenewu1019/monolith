@@ -37,6 +37,7 @@
 - [Contributing](#-contributing)
 - [License](#-license)
 - [Contact](#-contact)
+- [Acknowledgments](#-acknowledgments)
 
 ---
 
@@ -116,6 +117,11 @@ This project utilizes a modern Next.js stack focused on performance, modularity,
 - [Prettier](https://prettier.io/) - Code formatting
 - [Jest](https://jestjs.io/) - Testing framework
 - [React Testing Library](https://testing-library.com/react) - Component testing
+
+### UI Components
+- [Lucide React](https://lucide.dev/) - Beautiful icon set
+- [Radix UI](https://www.radix-ui.com/) - Accessible component primitives
+- Custom Design System - CSS Variables + Tailwind
 
 ---
 
@@ -271,16 +277,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 
 **Project Link**: [https://github.com/eugenewu1019/monolith](https://github.com/eugenewu1019/monolith)
 
-**Live Demo**: [https://eugenewu1019.github.io/monolith/](https://eugenewu1019.github.io/monolith/)
-
----
-
-<div align="center">
-
-**[⬆️ Back to top](#-monolith--geological-pastry-lab)**
-
-Made with 🖤 by [Eugene Wu](https://github.com/eugenewu1019)
-
-© 2026 MONOLITH | Geological Pastry Lab. All Rights Reserved.
-
-</div>
+**Live Demo**: [https://eugenewu1019.github.io/monolith/](https://eugenewu1019.github.io/monolith/)\n\n---\n\n## 🙏 Acknowledgments\n\nSpecial thanks to these amazing projects and resources:\n\n- [Next.js](https://nextjs.org/) - The React Framework\n- [Vercel](https://vercel.com/) - Deployment platform\n- [Radix UI](https://www.radix-ui.com/) - Accessible components\n- [Framer Motion](https://www.framer.com/motion/) - Animation library\n- [Tailwind CSS](https://tailwindcss.com/) - CSS framework\n- [Lucide Icons](https://lucide.dev/) - Beautiful icons\n- [Lenis](https://github.com/darkroomengineering/lenis) - Smooth scroll\n- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) - 3D graphics\n\n---\n\n<div align=\"center\">\n\n**[⬆️ Back to top](#-monolith--geological-pastry-lab)**\n\nMade with 🖤 by [Eugene Wu](https://github.com/eugenewu1019)\n\n© 2026 MONOLITH | Geological Pastry Lab. All Rights Reserved.\n\n</div>
