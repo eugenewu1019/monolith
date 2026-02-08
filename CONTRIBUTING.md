@@ -1,222 +1,38 @@
-# Contributing to MONOLITH
+# Contributing to Monolith
 
-First off, thank you for considering contributing to MONOLITH! 🎉
+First off, thank you for considering contributing to Monolith! This project is a blend of experimental "Vibe Coding" and strict engineering practices.
 
-It's people like you that make MONOLITH such a great project.
+## 🛠️ Development Philosophy
 
-## 📋 Table of Contents
+We value **Expression** over convention, but **Performance** is non-negotiable.
 
-- [Code of Conduct](#code-of-conduct)
-- [How Can I Contribute?](#how-can-i-contribute)
-- [Development Setup](#development-setup)
-- [Pull Request Process](#pull-request-process)
-- [Coding Standards](#coding-standards)
-- [Commit Messages](#commit-messages)
+### Core Principles
+1.  **Zero Jank**: Animations must run at 60fps (or 120fps). Use `transform` and `opacity` only. Avoid layout thrashing.
+2.  **Accessibility (a11y)**: Art should be accessible. Ensure semantic HTML even when wrapped in WebGL overlays.
+3.  **Type Safety**: No `any`. Seriously. We use strict TypeScript.
+
+## 💻 Development Workflow
+
+1.  **Fork & Branch**: Create a branch for your feature (`feat/amazing-shader`).
+2.  **Install**: Use `pnpm` (preferred) or `npm`.
+3.  **Dev**: Run `npm run dev`.
+4.  **Lint**: Run `npm run lint` before committing.
+5.  **Test**: If you add logic, add a test. `npm test`.
+
+## 🎨 Design Contributions
+
+If you are contributing design changes:
+-   Please refer to [DESIGN.md](DESIGN.md) for our token system.
+-   Do not introduce new colors without updating the Tailwind config.
+-   Motion changes should be prototyped in Figma or clear code sandboxes first.
+
+## 🐛 Reporting Bugs
+
+Please use the Issue Template. Include:
+-   Browser & OS version (Crucial for WebGL bugs).
+-   Screenshots or Screen recordings (loom/gif).
+-   Console errors.
 
 ## 📜 Code of Conduct
 
-This project and everyone participating in it is governed by our Code of Conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior to the project maintainers.
-
-## 🤝 How Can I Contribute?
-
-### Reporting Bugs
-
-Before creating bug reports, please check existing issues to avoid duplicates. When creating a bug report, include:
-
-- **Clear title and description**
-- **Steps to reproduce** the issue
-- **Expected behavior** vs actual behavior
-- **Screenshots** if applicable
-- **Environment details** (OS, browser, Node version)
-
-### Suggesting Enhancements
-
-Enhancement suggestions are tracked as GitHub issues. When creating an enhancement suggestion, include:
-
-- **Clear title and description**
-- **Use case** explaining why this would be useful
-- **Possible implementation** if you have ideas
-- **Examples** from other projects
-
-### Your First Code Contribution
-
-Unsure where to begin? Look for issues tagged with:
-
-- `good first issue` - Simple issues perfect for beginners
-- `help wanted` - Issues that need attention
-
-## 🛠 Development Setup
-
-1. **Fork the repository**
-
-2. **Clone your fork**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/monolith.git
-   cd monolith
-   ```
-
-3. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-4. **Create a branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-5. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-6. **Run tests**
-   ```bash
-   npm test
-   npm run lint
-   ```
-
-## 🔄 Pull Request Process
-
-1. **Update documentation** - Ensure README and comments reflect your changes
-
-2. **Add tests** - All new features should include tests
-
-3. **Run the test suite** - Ensure all tests pass
-   ```bash
-   npm test
-   npm run build
-   ```
-
-4. **Update CHANGELOG.md** - Add your changes under "Unreleased"
-
-5. **Follow commit conventions** - Use conventional commits (see below)
-
-6. **Submit PR** with:
-   - Clear description of changes
-   - Related issue numbers
-   - Screenshots for UI changes
-   - Breaking changes notes
-
-7. **Code review** - Address feedback from maintainers
-
-## 💻 Coding Standards
-
-### TypeScript
-
-- Use TypeScript for all new files
-- Define proper types, avoid `any`
-- Use interfaces for object shapes
-- Enable strict mode
-
-### Component Structure
-
-```typescript
-// components/Example.tsx
-import { FC } from 'react'
-
-interface ExampleProps {
-  title: string
-  description?: string
-}
-
-export const Example: FC<ExampleProps> = ({ title, description }) => {
-  return (
-    <div>
-      <h1>{title}</h1>
-      {description && <p>{description}</p>}
-    </div>
-  )
-}
-```
-
-### Styling
-
-- Use Tailwind CSS utility classes
-- Follow existing design system
-- Ensure responsive design (mobile-first)
-- Test dark mode compatibility
-
-### Naming Conventions
-
-- **Components**: PascalCase (`UserProfile.tsx`)
-- **Utilities**: camelCase (`formatDate.ts`)
-- **Constants**: UPPER_SNAKE_CASE (`API_URL`)
-- **CSS Classes**: kebab-case or Tailwind
-
-## 📝 Commit Messages
-
-We follow [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-type(scope): subject
-
-body (optional)
-
-footer (optional)
-```
-
-### Types
-
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code style changes (formatting)
-- `refactor`: Code refactoring
-- `test`: Adding or updating tests
-- `chore`: Maintenance tasks
-- `perf`: Performance improvements
-
-### Examples
-
-```bash
-feat(gallery): add horizontal scroll parallax effect
-
-fix(quiz): resolve physics calculation error
-
-docs(readme): update installation instructions
-
-test(utils): add tests for date formatting
-```
-
-## 🧪 Testing Guidelines
-
-- Write tests for new features
-- Maintain >50% code coverage
-- Test edge cases and error states
-- Use descriptive test names
-
-```typescript
-describe('ComponentName', () => {
-  it('should render correctly', () => {
-    // test implementation
-  })
-
-  it('should handle user interaction', () => {
-    // test implementation
-  })
-})
-```
-
-## 🎨 Design Guidelines
-
-- Follow existing visual style
-- Maintain consistent spacing
-- Ensure accessibility (WCAG 2.1 AA)
-- Test on multiple devices
-- Support keyboard navigation
-
-## 📞 Questions?
-
-Feel free to:
-- Open a [Discussion](https://github.com/eugenewu1019/monolith/discussions)
-- Ask in existing issues
-- Contact maintainers
-
-## 🙏 Thank You!
-
-Your contributions make this project better for everyone. We appreciate your time and effort! 🚀
-
----
-
-*Happy Coding! Made with 🖤 by the MONOLITH community*
+Be kind. We are all here to make cool stuff.
