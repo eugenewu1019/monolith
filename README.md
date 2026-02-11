@@ -10,14 +10,14 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://eugenewu1019.github.io/monolith/)
-[![CI/CD](https://github.com/eugenewu1019/monolith/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/eugenewu1019/monolith/actions)
+[![Design System](https://img.shields.io/badge/Design_System-Obsidian-black?style=flat&logo=figma)](DESIGN.md)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**Architecture of Taste. Ephemeral Sculpture.**
+**Architecture of Taste. Ephemeral Sculpture. Vibe Coding.**
 
-[Live Demo](https://eugenewu1019.github.io/monolith/) · [Report Bug](https://github.com/eugenewu1019/monolith/issues) · [Request Feature](https://github.com/eugenewu1019/monolith/issues) · [Discussions](https://github.com/eugenewu1019/monolith/discussions)
+[Live Demo](https://eugenewu1019.github.io/monolith/) · [Design System](DESIGN.md) · [Report Bug](https://github.com/eugenewu1019/monolith/issues) · [Discussions](https://github.com/eugenewu1019/monolith/discussions)
 
 ![Project Banner](public/images/obsidian-tart.png)
 
@@ -28,12 +28,12 @@
 ## 📚 Table of Contents
 
 - [About The Project](#-about-the-project)
+- [Design & Aesthetics](#-design--aesthetics)
 - [Key Features](#-key-features)
 - [Tech Stack](#️-tech-stack)
 - [Getting Started](#-getting-started)
 - [Project Structure](#-project-structure)
 - [Development](#-development)
-- [Deployment](#-deployment)
 - [Contributing](#-contributing)
 - [License](#-license)
 - [Contact](#-contact)
@@ -43,7 +43,7 @@
 
 ## 🎯 About The Project
 
-**MONOLITH** is a high-end, immersive concept website for a fictional pastry brand that merges geology with gastronomy. The project explores the intersection of **"Vibe Coding"** and performance-driven web engineering.
+**MONOLITH** is a high-end, immersive concept website for a fictional pastry brand that merges geology with gastronomy. The project explores the intersection of **"Vibe Coding"**—where technical engineering serves atmospheric storytelling.
 
 ### Why This Project?
 
@@ -52,6 +52,17 @@
 - 🌏 **Bilingual UX**: Implement seamless language switching for global audiences
 - 💡 **AI Integration**: Build interactive quiz with physics-based UI and smart recommendations
 - ⚡ **Performance First**: Achieve 90+ Lighthouse scores while maintaining rich interactions
+
+---
+
+## 🎨 Design & Aesthetics
+> Full documentation: [DESIGN.md](DESIGN.md)
+
+This project implements the **"Obsidian" Design System**, prioritizing atmosphere over convention.
+
+- **Visual Language**: A tension between "Raw" (mineral textures) and "Refined" (gold/glass accents).
+- **Motion Philosophy**: Elements float in a viscous medium. We use spring physics (via Framer Motion) rather than linear easings to create a "tactile" digital feel.
+- **Vibe Coding**: Utilizing WebGL shaders and procedural noise to create living backgrounds that breathe with the user's interaction.
 
 ---
 
@@ -95,7 +106,7 @@ This project utilizes a modern Next.js stack focused on performance, modularity,
 - [TypeScript](https://www.typescriptlang.org/) - Type safety and better DX
 - [React 18](https://react.dev/) - UI library with Server Components
 
-### Styling & Animation
+### Styling & Animation (Vibe Engineering)
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Framer Motion](https://www.framer.com/motion/) - Production-ready animation library
 - [Lenis](https://github.com/darkroomengineering/lenis) - Smooth scroll library
@@ -224,62 +235,6 @@ npm run test:coverage    # Generate coverage report
 npm run type-check       # Check TypeScript types
 ```
 
-### Environment Variables
-
-Create a `.env.local` file in the root directory:
-
-```env
-# Example environment variables
-NEXT_PUBLIC_SITE_URL=https://eugenewu1019.github.io/monolith
-NEXT_PUBLIC_GA_ID=your-google-analytics-id
-```
-
----
-
-## 🚀 Deployment
-
-### GitHub Pages (Current Setup)
-
-The project is configured to automatically deploy to GitHub Pages on push to `main`.
-
-1. **Enable GitHub Pages**
-   - Settings → Pages → Source: GitHub Actions
-
-2. **Push to main branch**
-   ```bash
-   git push origin main
-   ```
-
-3. **GitHub Actions will automatically**:
-   - Run tests
-   - Build the project
-   - Deploy to GitHub Pages
-
-### Alternative Deployment Options
-
-<details>
-<summary><b>Vercel</b> (Recommended for Next.js)</summary>
-
-1. Import repository to Vercel
-2. Configure build settings (auto-detected)
-3. Deploy!
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/eugenewu1019/monolith)
-
-</details>
-
-<details>
-<summary><b>Netlify</b></summary>
-
-1. Connect repository
-2. Build command: `npm run build`
-3. Publish directory: `out`
-4. Deploy!
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/eugenewu1019/monolith)
-
-</details>
-
 ---
 
 ## 🤝 Contributing
@@ -293,14 +248,6 @@ Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on:
 - How to submit pull requests
 - Coding standards
 - Commit message conventions
-
-### Quick Start for Contributors
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'feat: add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ---
 
@@ -330,31 +277,4 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 
 **Project Link**: [https://github.com/eugenewu1019/monolith](https://github.com/eugenewu1019/monolith)
 
-**Live Demo**: [https://eugenewu1019.github.io/monolith/](https://eugenewu1019.github.io/monolith/)
-
----
-
-## 🙏 Acknowledgments
-
-Special thanks to these amazing projects and resources:
-
-- [Next.js](https://nextjs.org/) - The React Framework
-- [Vercel](https://vercel.com/) - Deployment platform
-- [Radix UI](https://www.radix-ui.com/) - Accessible components
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [Lucide Icons](https://lucide.dev/) - Beautiful icons
-- [Lenis](https://github.com/darkroomengineering/lenis) - Smooth scroll
-- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) - 3D graphics
-
----
-
-<div align="center">
-
-**[⬆️ Back to top](#-monolith--geological-pastry-lab)**
-
-Made with 🖤 by [Eugene Wu](https://github.com/eugenewu1019)
-
-© 2026 MONOLITH | Geological Pastry Lab. All Rights Reserved.
-
-</div>
+**Live Demo**: [https://eugenewu1019.github.io/monolith/](https://eugenewu1019.github.io/monolith/)\n\n---\n\n## 🙏 Acknowledgments\n\nSpecial thanks to these amazing projects and resources:\n\n- [Next.js](https://nextjs.org/) - The React Framework\n- [Vercel](https://vercel.com/) - Deployment platform\n- [Radix UI](https://www.radix-ui.com/) - Accessible components\n- [Framer Motion](https://www.framer.com/motion/) - Animation library\n- [Tailwind CSS](https://tailwindcss.com/) - CSS framework\n- [Lucide Icons](https://lucide.dev/) - Beautiful icons\n- [Lenis](https://github.com/darkroomengineering/lenis) - Smooth scroll\n- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) - 3D graphics\n\n---\n\n<div align=\"center\">\n\n**[⬆️ Back to top](#-monolith--geological-pastry-lab)**\n\nMade with 🖤 by [Eugene Wu](https://github.com/eugenewu1019)\n\n© 2026 MONOLITH | Geological Pastry Lab. All Rights Reserved.\n\n</div>
