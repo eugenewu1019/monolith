@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Finsights\u002Fcollab\u002F[id]","\u002Fjournal\u002F[slug]","\u002Fmobile\u002Finsights\u002Fcollab\u002F[id]","\u002Fmobile\u002Fjournal\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
