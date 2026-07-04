@@ -3,7 +3,7 @@
 3:I[56728,["/monolith/_next/static/chunks/11b79ea3268c50d9.js","/monolith/_next/static/chunks/52cc3f333d527c94.js","/monolith/_next/static/chunks/342dcb33fade64df.js","/monolith/_next/static/chunks/09a7eba2f2701430.js","/monolith/_next/static/chunks/5708897621c8516d.js"],"default"]
 6:I[97367,["/monolith/_next/static/chunks/ff1a16fafef87110.js","/monolith/_next/static/chunks/c0ddd4e0cb2bdbe0.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-0:{"buildId":"lrzqf_xLtco-8I8JWSk0p","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/monolith/_next/static/chunks/5708897621c8516d.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"eG7bM0bTBGeU0GcpLH2Vp","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/monolith/_next/static/chunks/5708897621c8516d.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:{}
 8:null
