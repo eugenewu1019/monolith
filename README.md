@@ -1,23 +1,23 @@
 <div align="right">
 
-**Language**: [🇺🇸 English](README.md) | [🇹🇼 繁體中文](README.zh-TW.md)
+**Language**: [English](README.md) | [繁體中文](README.zh-TW.md)
 
 </div>
 
 <div align="center">
 
-# 🌑 MONOLITH | Geological Pastry Lab
+# MONOLITH | Geological Pastry Lab
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://eugenewu1019.github.io/monolith/)
 [![Design System](https://img.shields.io/badge/Design_System-Obsidian-black?style=flat&logo=figma)](DESIGN.md)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&logoColor=white)](https://nextjs.org/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=111111)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-**Architecture of Taste. Ephemeral Sculpture. Vibe Coding.**
+**Architecture of taste. Geological dessert as an interactive digital exhibit.**
 
-[Live Demo](https://eugenewu1019.github.io/monolith/) · [Design System](DESIGN.md) · [Report Bug](https://github.com/eugenewu1019/monolith/issues) · [Discussions](https://github.com/eugenewu1019/monolith/discussions)
+[Live Demo](https://eugenewu1019.github.io/monolith/) · [Design System](DESIGN.md) · [Issues](https://github.com/eugenewu1019/monolith/issues)
 
 ![Project Banner](public/images/obsidian-tart.png)
 
@@ -25,256 +25,162 @@
 
 ---
 
-## 📚 Table of Contents
+## About
 
-- [About The Project](#-about-the-project)
-- [Design & Aesthetics](#-design--aesthetics)
-- [Key Features](#-key-features)
-- [Tech Stack](#️-tech-stack)
-- [Getting Started](#-getting-started)
-- [Project Structure](#-project-structure)
-- [Development](#-development)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Contact](#-contact)
-- [Acknowledgments](#-acknowledgments)
+**MONOLITH** is an immersive bilingual concept site for a fictional luxury pastry brand. It treats dessert as edible geology: mineral textures, exhibition-like navigation, atmospheric 3D motion, and quiet editorial typography.
 
----
+The current release focuses on the **V1.5 experience upgrade**: a more cinematic hero, a click-ready horizontal tasting journey, stronger mobile handling, cleaner navigation contrast, and a more complete interaction model.
 
-## 🎯 About The Project
+## V1.5 Experience
 
-**MONOLITH** is a high-end, immersive concept website for a fictional pastry brand that merges geology with gastronomy. The project explores the intersection of **"Vibe Coding"**—where technical engineering serves atmospheric storytelling.
+### Interactive Hero System
 
-### Why This Project?
+- Mode-based hero controls: **Structure**, **Texture**, and **Time**.
+- A Three.js / React Three Fiber background that reacts to the selected mode.
+- Layered scan lines, orbital motion, exhibit panels, and specimen labels.
+- Reduced-motion fallback so the hero still works without WebGL-heavy animation.
 
-- 🎨 **Design Challenge**: Transform physical luxury experiences into compelling digital interfaces
-- 🚀 **Technical Exploration**: Push boundaries of Next.js 14 App Router with complex animations
-- 🌏 **Bilingual UX**: Implement seamless language switching for global audiences
-- 💡 **AI Integration**: Build interactive quiz with physics-based UI and smart recommendations
-- ⚡ **Performance First**: Achieve 90+ Lighthouse scores while maintaining rich interactions
+### Tasting Journey Gallery
 
----
+- Seven-station horizontal tasting sequence with a stronger exhibition rhythm.
+- Dessert cards are fully clickable: selecting a card scrolls it into focus and opens the matching detail modal.
+- The final reservation card was removed to keep the gallery focused on tasting and selection.
+- The closing quiz station remains interactive and uses dialog semantics, Escape close, and focus-safe controls.
 
-## 🎨 Design & Aesthetics
-> Full documentation: [DESIGN.md](DESIGN.md)
+### Navigation And Reading Contrast
 
-This project implements the **"Obsidian" Design System**, prioritizing atmosphere over convention.
+- Header was redesigned with a dark glass backing so navigation stays readable over bright or complex sections.
+- Desktop and mobile layouts use clearer layering, contrast, and pointer states.
 
-- **Visual Language**: A tension between "Raw" (mineral textures) and "Refined" (gold/glass accents).
-- **Motion Philosophy**: Elements float in a viscous medium. We use spring physics (via Framer Motion) rather than linear easings to create a "tactile" digital feel.
-- **Vibe Coding**: Utilizing WebGL shaders and procedural noise to create living backgrounds that breathe with the user's interaction.
+### Testimonials
 
----
+- Customer review section includes compact bottom-right previous / next controls.
+- Pagination and review transitions are tuned to feel quieter and more gallery-like.
 
-## ✨ Key Features
+### Mobile Experience
 
-### 🌍 Bilingual First
-- Complete i18n implementation with custom `useLocale` hook
-- Instant language switching (English / Traditional Chinese)
-- SEO-optimized metadata for both languages
+- Mobile-specific layout keeps the brand atmosphere while avoiding desktop-only horizontal mechanics.
+- Touch-first cards, stable spacing, and reduced visual overlap across small screens.
 
-### 💎 Immersive Horizontal Gallery
-- **Scroll-Jacked Motion**: Smooth horizontal navigation that feels like an exhibition walkthrough
-- **Parallax Depth**: Layers of geological textures with 3D parallax effects
-- **Optimized Performance**: RequestAnimationFrame-based smooth scrolling
+## Design Direction
 
-### 🧠 AI Sommelier Quiz
-- **Physics-Based Interaction**: Spring-physics modals powered by Framer Motion
-- **Weighted Preference Matching**: Smart algorithm for personalized recommendations
-- **Multi-dimensional Profiling**: Mood, flavor, texture, and occasion analysis
+MONOLITH uses an **Obsidian** visual system:
 
-### 🌒 Immersive Dark Theme
-- **Zodiac Palette**: Curated dark mode with "Zodiac Black" and "Zodiac Gold" tokens
-- **Micro-glow Effects**: Subtle light bleeds and mesh gradients
-- **Natural Aesthetics**: Inspired by mineral veins and geological formations
+- **Raw / Refined tension**: mineral surfaces, glass, gold hairlines, and restrained luxury.
+- **Dark geological palette**: deep black, graphite, weathered gold, moss, and amber.
+- **Editorial pacing**: large type where it matters, compact labels where the UI needs to scan.
+- **Motion as material**: slow orbital movement, parallax, depth, and tactile hover states.
 
-### 🚀 Performance & Accessibility
-- Lazy loading and code splitting
-- Image optimization with Next.js Image
-- WCAG 2.1 AA compliant
-- Keyboard navigation support
-- Screen reader friendly
+Full design documentation: [DESIGN.md](DESIGN.md)
 
----
-
-## 🛠️ Tech Stack
-
-This project utilizes a modern Next.js stack focused on performance, modularity, and high-fidelity animations.
+## Tech Stack
 
 ### Core
-- [Next.js 14](https://nextjs.org/) - React framework with App Router
-- [TypeScript](https://www.typescriptlang.org/) - Type safety and better DX
-- [React 18](https://react.dev/) - UI library with Server Components
 
-### Styling & Animation (Vibe Engineering)
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion/) - Production-ready animation library
-- [Lenis](https://github.com/darkroomengineering/lenis) - Smooth scroll library
-- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) - React renderer for Three.js
+- [Next.js 16](https://nextjs.org/) with App Router
+- [React 19](https://react.dev/)
+- [TypeScript 5](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
 
-### Development Tools
-- [ESLint](https://eslint.org/) - Code linting
-- [Prettier](https://prettier.io/) - Code formatting
-- [Jest](https://jestjs.io/) - Testing framework
-- [React Testing Library](https://testing-library.com/react) - Component testing
+### Motion And 3D
 
-### UI Components
-- [Lucide React](https://lucide.dev/) - Beautiful icon set
-- [Radix UI](https://www.radix-ui.com/) - Accessible component primitives
-- Custom Design System - CSS Variables + Tailwind
+- [Framer Motion 12](https://www.framer.com/motion/)
+- [React Three Fiber 9](https://docs.pmnd.rs/react-three-fiber/)
+- [Drei 10](https://github.com/pmndrs/drei)
+- [Lenis](https://github.com/darkroomengineering/lenis)
 
----
+### UI And Tooling
 
-## 🚀 Getting Started
+- [Radix UI](https://www.radix-ui.com/)
+- [Lucide React](https://lucide.dev/)
+- [ESLint 9](https://eslint.org/)
+- [Prettier 3](https://prettier.io/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/react)
 
-### Prerequisites
+## Getting Started
 
-- **Node.js** 18.17 or later
-- **npm** or **yarn** or **pnpm**
+### Requirements
+
+- Node.js 20 or later is recommended.
+- npm is the project default package manager.
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/eugenewu1019/monolith.git
-   cd monolith
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
-
-3. **Run development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
-
-4. **Open in browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-### Build for Production
-
 ```bash
-# Create optimized production build
-npm run build
-
-# Start production server
-npm start
-
-# Export static site (for GitHub Pages)
-npm run build
+git clone https://github.com/eugenewu1019/monolith.git
+cd monolith
+npm install
 ```
 
----
+### Local Development
 
-## 📂 Project Structure
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### Production Build
+
+```bash
+npm run build
+npm start
+```
+
+## Scripts
+
+```bash
+npm run dev            # Start the development server
+npm run build          # Create a production build
+npm start              # Start the production server
+npm run lint           # Run ESLint
+npm run lint:fix       # Fix ESLint issues
+npm run format         # Format supported files with Prettier
+npm run type-check     # Run TypeScript without emitting files
+npm test               # Run Jest tests
+npm run test:watch     # Run Jest in watch mode
+npm run test:coverage  # Generate coverage output
+```
+
+## Project Structure
 
 ```text
 monolith/
 ├── src/
-│   ├── app/                  # Next.js App Router
-│   │   ├── [locale]/          # Internationalized routes
-│   │   ├── layout.tsx         # Root layout
-│   │   └── page.tsx           # Home page
-│   ├── components/           # Reusable components
-│   │   ├── sections/         # Page sections
-│   │   ├── ui/               # UI primitives
-│   │   └── __tests__/        # Component tests
-│   ├── lib/                  # Utilities & helpers
-│   │   ├── i18n/             # Internationalization
-│   │   ├── data/             # Static data
-│   │   └── __tests__/        # Utility tests
-│   └── docs/                 # Brand guidelines
-├── public/                  # Static assets
-│   ├── images/              # Images
-│   ├── fonts/               # Custom fonts
-│   └── icons/               # Icons & favicons
-├── .github/                 # GitHub configs
-│   └── workflows/           # CI/CD pipelines
-├── jest.config.js           # Jest configuration
-├── jest.setup.js            # Test setup
-├── next.config.ts           # Next.js configuration
-├── tailwind.config.ts       # Tailwind configuration
-├── tsconfig.json            # TypeScript configuration
-└── README.md                # This file
+│   ├── app/                    # Next.js app routes and global styles
+│   ├── components/
+│   │   ├── gallery/            # Horizontal tasting journey and quiz
+│   │   ├── hero/               # Interactive hero, modes, and 3D background
+│   │   ├── mobile/             # Mobile-specific experience
+│   │   ├── sections/           # Editorial page sections
+│   │   └── ui/                 # Shared UI primitives
+│   └── lib/                    # Utilities, hooks, and shared data
+├── public/
+│   └── images/                 # Brand and dessert imagery
+├── docs/                       # Project documentation
+├── DESIGN.md                   # Design system notes
+├── README.md                   # English README
+└── README.zh-TW.md             # Traditional Chinese README
 ```
 
----
+## Validation
 
-## 💻 Development
+The V1.5 upgrade was verified with:
 
-### Available Scripts
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --runInBand`
+- `npm run build`
+- Playwright interaction checks for hero modes, gallery card clicks, quiz modal behavior, testimonial controls, header contrast, and reduced-motion fallback.
 
-```bash
-# Development
-npm run dev              # Start development server
-npm run build            # Build for production
-npm start                # Start production server
+## License
 
-# Code Quality
-npm run lint             # Run ESLint
-npm run lint:fix         # Fix ESLint issues
-npm run format           # Format with Prettier
+This project is released under the [MIT License](LICENSE).
 
-# Testing
-npm test                 # Run tests
-npm run test:watch       # Run tests in watch mode
-npm run test:coverage    # Generate coverage report
+## Contact
 
-# Type Checking
-npm run type-check       # Check TypeScript types
-```
+Owen Wu
 
----
-
-## 🤝 Contributing
-
-Contributions are what make the open source community amazing! Any contributions you make are **greatly appreciated**.
-
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on:
-
-- Code of Conduct
-- Development process
-- How to submit pull requests
-- Coding standards
-- Commit message conventions
-
----
-
-## 🐛 Bug Reports & Feature Requests
-
-Found a bug or have a feature idea?
-
-- **Bug Reports**: [Create an issue](https://github.com/eugenewu1019/monolith/issues/new?template=bug_report.md)
-- **Feature Requests**: [Create an issue](https://github.com/eugenewu1019/monolith/issues/new?template=feature_request.md)
-- **Questions**: [Start a discussion](https://github.com/eugenewu1019/monolith/discussions)
-
----
-
-## 📝 License
-
-Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
-
----
-
-## 📬 Contact
-
-**Owen Wu** - UI/UX Designer & Frontend Developer
-
-- LinkedIn: [@owenwuwork](https://www.linkedin.com/in/owenwuwork)
 - GitHub: [@eugenewu1019](https://github.com/eugenewu1019)
-- Portfolio: [Coming Soon]
-
-**Project Link**: [https://github.com/eugenewu1019/monolith](https://github.com/eugenewu1019/monolith)
-
-**Live Demo**: [https://eugenewu1019.github.io/monolith/](https://eugenewu1019.github.io/monolith/)\n\n---\n\n## 🙏 Acknowledgments\n\nSpecial thanks to these amazing projects and resources:\n\n- [Next.js](https://nextjs.org/) - The React Framework\n- [Vercel](https://vercel.com/) - Deployment platform\n- [Radix UI](https://www.radix-ui.com/) - Accessible components\n- [Framer Motion](https://www.framer.com/motion/) - Animation library\n- [Tailwind CSS](https://tailwindcss.com/) - CSS framework\n- [Lucide Icons](https://lucide.dev/) - Beautiful icons\n- [Lenis](https://github.com/darkroomengineering/lenis) - Smooth scroll\n- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) - 3D graphics\n\n---\n\n<div align=\"center\">\n\n**[⬆️ Back to top](#-monolith--geological-pastry-lab)**\n\nMade with 🖤 by [Eugene Wu](https://github.com/eugenewu1019)\n\n© 2026 MONOLITH | Geological Pastry Lab. All Rights Reserved.\n\n</div>
+- LinkedIn: [@owenwuwork](https://www.linkedin.com/in/owenwuwork)

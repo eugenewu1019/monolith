@@ -1,23 +1,23 @@
 <div align="right">
 
-**語言**: [🇺🇸 English](README.md) | [🇹🇼 繁體中文](README.zh-TW.md)
+**語言**: [English](README.md) | [繁體中文](README.zh-TW.md)
 
 </div>
 
 <div align="center">
 
-# 🌑 MONOLITH | 地質甜點工作室
+# MONOLITH | 地質甜點工作室
 
 [![MIT 授權](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![線上展示](https://img.shields.io/badge/demo-online-green.svg)](https://eugenewu1019.github.io/monolith/)
 [![設計系統](https://img.shields.io/badge/Design_System-Obsidian-black?style=flat&logo=figma)](DESIGN.zh-TW.md)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&logoColor=white)](https://nextjs.org/)
-[![歡迎 PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.zh-TW.md)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=111111)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-**品味的建築。轉瞬的雕塑。氛圍編碼 (Vibe Coding)。**
+**品味的建築。把地質甜點做成可互動的數位展覽。**
 
-[線上展示](https://eugenewu1019.github.io/monolith/) · [設計系統](DESIGN.zh-TW.md) · [回報錯誤](https://github.com/eugenewu1019/monolith/issues) · [討論區](https://github.com/eugenewu1019/monolith/discussions)
+[線上展示](https://eugenewu1019.github.io/monolith/) · [設計系統](DESIGN.zh-TW.md) · [Issues](https://github.com/eugenewu1019/monolith/issues)
 
 ![Project Banner](public/images/obsidian-tart.png)
 
@@ -25,254 +25,163 @@
 
 ---
 
-## 📚 目錄
+## 專案介紹
 
-- [關於專案](#-關於專案)
-- [設計與美學](#-設計與美學)
-- [核心功能](#-核心功能)
-- [技術棧](#️-技術棧)
-- [快速開始](#-快速開始)
-- [專案結構](#-專案結構)
-- [開發指南](#-開發指南)
-- [貢獻](#-貢獻)
-- [授權](#-授權)
-- [聯絡方式](#-聯絡方式)
+**MONOLITH** 是一個沉浸式雙語概念網站，為虛構高端甜點品牌打造。它把甜點視為「可食用的地質標本」：礦物質感、展覽式導覽、具氛圍的 3D 動態，以及安靜但有張力的編輯排版。
 
----
+目前版本重點是 **V1.5 體驗升級**：首頁更有電影感、橫向品味旅程全面可點擊、手機版更穩定、導航列可讀性更清楚，互動流程也更完整。
 
-## 🎯 關於專案
+## V1.5 體驗升級
 
-**MONOLITH** 是一個極具沉浸感的概念網站，為一個將「地質學」與「甜點工藝」結合的虛構高端品牌而生。本專案旨在探索 **「氛圍編碼 (Vibe Coding)」**——即技術工程如何服務於氛圍敘事。
+### 互動式首頁 Hero
 
-### 為什麼做這個專案？
+- Hero 模式可切換：**Structure / 結構**、**Texture / 質地**、**Time / 時間**。
+- Three.js / React Three Fiber 背景會依目前模式改變光線、材質與動態。
+- 加入掃描線、軌道動態、展覽資訊卡與標本標籤，讓首屏更像沉浸式展件。
+- 支援 reduced-motion fallback，使用者關閉動態時仍可正常閱讀與操作。
 
-- 🎨 **設計挑戰**: 將實體奢華體驗轉化為吸引人的數位介面
-- 🚀 **技術探索**: 挑戰 Next.js 14 App Router 的極限，實現複雜動畫效果
-- 🌏 **雙語使用者體驗**: 為全球用戶實現無縫的語言切換體驗
-- 💡 **AI 整合**: 打造結合物理感介面與智慧推薦的互動測驗
-- ⚡ **效能優先**: 在維持豐富互動的同時達到 90 分以上的 Lighthouse 評分
+### 品味旅程藝廊
 
----
+- 七段式橫向 tasting journey，節奏更像展覽動線。
+- 甜點卡片全面可點擊：點擊後會先滑動到對應卡片，再打開對應的詳細彈窗。
+- 已移除最後的預約卡片，避免內容重疊與錯誤操作，讓藝廊專注在甜點選擇。
+- 最後保留互動測驗站，並補上 dialog 語意、Escape 關閉與更安全的互動狀態。
 
-## 🎨 設計與美學
-> 完整文件：[DESIGN.zh-TW.md](DESIGN.zh-TW.md)
+### 導航列與閱讀對比
 
-本專案實作 **「黑曜石 (Obsidian)」設計系統**，將氛圍置於慣例之上。
+- 導航列改成深色玻璃底，避免文字和背景重疊造成不可讀。
+- 桌機與手機版都強化層級、對比與 hover / pointer 狀態。
 
-- **視覺語言**: 「原始 (Raw)」礦物紋理與「精緻 (Refined)」金屬/玻璃元素之間的張力。
-- **動態哲學**: 元素漂浮於黏稠介質中。我們使用彈簧物理 (Spring Physics，透過 Framer Motion)，而非線性緩動，以創造「觸覺般」的數位手感。
-- **Vibe Coding**: 利用 WebGL shaders 與程序化噪聲，創造隨使用者互動呼吸的有機背景。
+### 評論區
 
----
+- 評論區右下角新增簡潔的上一則 / 下一則按鈕。
+- 分頁與評論切換動態調整成更安靜、接近藝廊瀏覽的節奏。
 
-## ✨ 核心功能
+### 手機版體驗
 
-### 🌍 雙語優先
-- 完整的國際化實作，搭配自訂 `useLocale` hook
-- 即時語言切換 (英文/繁體中文)
-- 針對雙語優化的 SEO metadata
+- 手機版使用專用 layout，保留品牌氛圍但避開桌機橫向互動造成的壓縮問題。
+- 卡片、間距、觸控區域與文字尺寸重新整理，降低小螢幕重疊風險。
 
-### 💎 沉浸式橫向藝廊
-- **滾動劫持運鏡**: 平滑的橫向導覽，如同漫步於藝廊展覽之中
-- **視差深度**: 多層次地質紋理搭配 3D 視差效果
-- **效能優化**: 基於 RequestAnimationFrame 的流暢滾動
+## 設計方向
 
-### 🧠 AI 甜點風味測驗
-- **物理感互動**: 由 Framer Motion 驅動的彈簧物理感對話框
-- **權重偏好配對**: 智慧演算法提供個人化推薦
-- **多維度分析**: 分析心情、風味、質地與場合
+MONOLITH 使用 **Obsidian / 黑曜石** 視覺系統：
 
-### 🌒 沉浸式極黑美學
-- **原石配色**: 精心策劃的深色模式，採用「原石黑」與「礦脈金」色票
-- **微光效果**: 細緻的光暈擴散與網格漸層
-- **自然美學**: 靈感來自礦脈紋理與地質形成
+- **Raw / Refined 張力**：礦物表面、玻璃、金色細線與克制的高級感。
+- **深色地質色盤**：深黑、石墨、舊金、苔綠與琥珀。
+- **編輯式節奏**：真正需要吸睛時才放大字級，介面操作則保持細緻易掃讀。
+- **把動態當材質**：慢速軌道、視差、深度與有觸感的 hover 狀態。
 
-### 🚀 效能與無障礙
-- 延遲載入與程式碼分割
-- Next.js Image 圖片優化
-- 符合 WCAG 2.1 AA 標準
-- 鍵盤導覽支援
-- 螢幕閱讀器友善
+完整設計文件：[DESIGN.zh-TW.md](DESIGN.zh-TW.md)
 
----
-
-## 🛠️ 技術棧
-
-本專案採用現代 Next.js 技術棧，專注於效能、模組化與高質感動畫。
+## 技術棧
 
 ### 核心
-- [Next.js 14](https://nextjs.org/) - 搭載 App Router 的 React 框架
-- [TypeScript](https://www.typescriptlang.org/) - 型別安全與更好的開發體驗
-- [React 18](https://react.dev/) - 具備伺服器元件的 UI 函式庫
 
-### 樣式與動畫 (氛圍工程)
-- [Tailwind CSS](https://tailwindcss.com/) - 工具優先的 CSS 框架
-- [Framer Motion](https://www.framer.com/motion/) - 生產級動畫函式庫
-- [Lenis](https://github.com/darkroomengineering/lenis) - 平滑滾動函式庫
-- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) - Three.js 的 React 渲染器
+- [Next.js 16](https://nextjs.org/) with App Router
+- [React 19](https://react.dev/)
+- [TypeScript 5](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
 
-### 開發工具
-- [ESLint](https://eslint.org/) - 程式碼檢查
-- [Prettier](https://prettier.io/) - 程式碼格式化
-- [Jest](https://jestjs.io/) - 測試框架
-- [React Testing Library](https://testing-library.com/react) - 元件測試
+### 動態與 3D
 
----
+- [Framer Motion 12](https://www.framer.com/motion/)
+- [React Three Fiber 9](https://docs.pmnd.rs/react-three-fiber/)
+- [Drei 10](https://github.com/pmndrs/drei)
+- [Lenis](https://github.com/darkroomengineering/lenis)
 
-## 🚀 快速開始
+### UI 與開發工具
+
+- [Radix UI](https://www.radix-ui.com/)
+- [Lucide React](https://lucide.dev/)
+- [ESLint 9](https://eslint.org/)
+- [Prettier 3](https://prettier.io/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/react)
+
+## 快速開始
 
 ### 前置需求
 
-- **Node.js** 18.17 或更新版本
-- **npm** 或 **yarn** 或 **pnpm**
+- 建議使用 Node.js 20 或更新版本。
+- 本專案預設使用 npm。
 
-### 安裝步驟
+### 安裝
 
-1. **複製儲存庫**
-   ```bash
-   git clone https://github.com/eugenewu1019/monolith.git\n   cd monolith
-   ```
+```bash
+git clone https://github.com/eugenewu1019/monolith.git
+cd monolith
+npm install
+```
 
-2. **安裝依賴套件**
-   ```bash
-   npm install
-   # 或
-   yarn install\n   # 或\n   pnpm install
-   ```
+### 本機開發
 
-3. **啟動開發伺服器**
-   ```bash
-   npm run dev\n   # 或\n   yarn dev\n   # 或\n   pnpm dev
-   ```
+```bash
+npm run dev
+```
 
-4. **在瀏覽器開啟**
-   
-   前往 [http://localhost:3000](http://localhost:3000)
+開啟 [http://localhost:3000](http://localhost:3000)。
 
 ### 正式環境建置
 
 ```bash
-# 建立優化的正式版本
 npm run build
-
-# 啟動正式伺服器
 npm start
-
-# 匯出靜態網站 (用於 GitHub Pages)
-npm run build
 ```
 
----
+## 可用指令
 
-## 📂 專案結構
+```bash
+npm run dev            # 啟動開發伺服器
+npm run build          # 建立正式版本
+npm start              # 啟動正式伺服器
+npm run lint           # 執行 ESLint
+npm run lint:fix       # 自動修復 ESLint 問題
+npm run format         # 使用 Prettier 格式化支援的檔案
+npm run type-check     # 執行 TypeScript 型別檢查
+npm test               # 執行 Jest 測試
+npm run test:watch     # 使用 watch 模式執行 Jest
+npm run test:coverage  # 產生測試覆蓋率報告
+```
+
+## 專案結構
 
 ```text
 monolith/
 ├── src/
-│   ├── app/                  # Next.js 應用路由
-│   │   ├── [locale]/          # 國際化路由
-│   │   ├── layout.tsx         # 根佈局
-│   │   └── page.tsx           # 首頁
-│   ├── components/           # 可重用元件
-│   │   ├── sections/         # 頁面區塊
-│   │   ├── ui/               # UI 基礎元件
-│   │   └── __tests__/        # 元件測試
-│   ├── lib/                  # 工具函式與輔助程式
-│   │   ├── i18n/             # 國際化
-│   │   ├── data/             # 靜態資料
-│   │   └── __tests__/        # 工具函式測試
-│   └── docs/                 # 品牌指南
-├── public/                  # 靜態資源
-│   ├── images/              # 圖片
-│   ├── fonts/               # 自訂字型\n   └── icons/               # 圖示與網站圖示
-├── .github/                 # GitHub 配置
-│   └── workflows/           # CI/CD 流程
-├── jest.config.js           # Jest 配置
-├── jest.setup.js            # 測試設定
-├── next.config.ts           # Next.js 配置
-├── tailwind.config.ts       # Tailwind 配置
-├── tsconfig.json            # TypeScript 配置
-└── README.md                # 本檔案
+│   ├── app/                    # Next.js app routes 與全域樣式
+│   ├── components/
+│   │   ├── gallery/            # 橫向品味旅程與測驗
+│   │   ├── hero/               # 互動首頁、模式切換與 3D 背景
+│   │   ├── mobile/             # 手機版專用體驗
+│   │   ├── sections/           # 編輯式頁面區塊
+│   │   └── ui/                 # 共用 UI 基礎元件
+│   └── lib/                    # 工具函式、hooks 與共用資料
+├── public/
+│   └── images/                 # 品牌與甜點圖片
+├── docs/                       # 專案文件
+├── DESIGN.md                   # 英文設計系統文件
+├── DESIGN.zh-TW.md             # 繁中設計系統文件
+├── README.md                   # 英文 README
+└── README.zh-TW.md             # 繁中 README
 ```
 
----
+## 驗證紀錄
 
-## 💻 開發指南
+V1.5 升級已用以下方式驗證：
 
-### 可用指令
+- `npm run lint`
+- `npm run type-check`
+- `npm test -- --runInBand`
+- `npm run build`
+- Playwright 互動檢查：Hero 模式切換、藝廊卡片點擊、測驗彈窗、評論切換按鈕、導航列對比、reduced-motion fallback。
 
-```bash
-# 開發
-npm run dev              # 啟動開發伺服器
-npm run build            # 建置正式版本
-npm start                # 啟動正式伺服器
+## 授權
 
-# 程式碼品質
-npm run lint             # 執行 ESLint
-npm run lint:fix         # 自動修復 ESLint 問題
-npm run format           # 使用 Prettier 格式化
+本專案採用 [MIT License](LICENSE)。
 
-# 測試
-npm test                 # 執行測試
-npm run test:watch       # 監看模式執行測試
-npm run test:coverage    # 生成測試覆蓋率報告
+## 聯絡
 
-# 型別檢查
-npm run type-check       # 檢查 TypeScript 型別
-```
+Owen Wu
 
----
-
-## 🤝 貢獻
-
-貢獻讓開源社群變得如此美好！我們非常感謝您的任何貢獻。
-
-請閱讀我們的[貢獻指南](CONTRIBUTING.zh-TW.md)以了解：
-
-- 行為準則
-- 開發流程
-- 如何提交 pull requests
-- 程式碼標準
-- commit 訊息規範
-
----
-
-## 🐛 錯誤回報與功能請求
-
-發現錯誤或有功能建議？
-
-- **錯誤回報**: [建立 issue](https://github.com/eugenewu1019/monolith/issues/new?template=bug_report.md)
-- **功能請求**: [建立 issue](https://github.com/eugenewu1019/monolith/issues/new?template=feature_request.md)
-- **問題討論**: [開啟討論](https://github.com/eugenewu1019/monolith/discussions)
-
----
-
-## 📝 授權
-
-本專案採用 MIT 授權。詳情請見 [`LICENSE`](LICENSE) 檔案。
-
----
-
-## 📬 聯絡方式
-
-**Owen Wu** - UI/UX 設計師與前端工程師
-
-- LinkedIn: [@owenwuwork](https://www.linkedin.com/in/owenwuwork)
 - GitHub: [@eugenewu1019](https://github.com/eugenewu1019)
-- 作品集: [即將推出]
-
-**專案連結**: [https://github.com/eugenewu1019/monolith](https://github.com/eugenewu1019/monolith)
-
-**線上展示**: [https://eugenewu1019.github.io/monolith/](https://eugenewu1019.github.io/monolith/)
-
----
-
-<div align="center">
-
-**[⬆️ 返回頂部](#-monolith--地質甜點工作室)**
-
-Made with 🖤 by [Eugene Wu](https://github.com/eugenewu1019)
-
-© 2026 MONOLITH | Geological Pastry Lab. All Rights Reserved.
-
-</div>
+- LinkedIn: [@owenwuwork](https://www.linkedin.com/in/owenwuwork)
