@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { StickyDeck, StickySection } from "@/components/ui/sticky-deck";
-import { MoveDown } from "lucide-react";
-import Image from "next/image";
 import FluidBackground from "@/components/hero/fluid-background";
 import InteractiveHero from "@/components/hero/interactive-hero";
 import PhilosophySection from "@/components/sections/philosophy-section";
@@ -14,10 +12,12 @@ import ChefProfile from "@/components/chef/chef-profile";
 import TestimonialsSection from "@/components/sections/testimonials-section";
 import FAQModal from "@/components/ui/faq-modal";
 import MobileHome from "@/app/mobile/page";
+import type { HeroMode } from "@/components/hero/hero-modes";
 
 export default function Home() {
   const [isFAQOpen, setIsFAQOpen] = useState(false);
-  const { t, locale } = useTranslation();
+  const [heroMode, setHeroMode] = useState<HeroMode>("structure");
+  const { t } = useTranslation();
   const stickySections = [
     {
       id: "hero",
@@ -35,10 +35,12 @@ export default function Home() {
       id: "philosophy",
       title: "Philosophy",
       subtitle: "The Architecture of Taste",
-      description: "We deconstruct the concept of sweetness, rebuilding it through texture, temperature, and time. Each creation is a sculpture meant to disappear.",
+      description:
+        "We deconstruct the concept of sweetness, rebuilding it through texture, temperature, and time. Each creation is a sculpture meant to disappear.",
       zhTitle: "品牌哲學",
       zhSubtitle: "味覺建築",
-      zhDescription: "我們解構「甜」的概念，透過質地、溫度與時間重塑。每一件作品，都是為了消逝而存在的雕塑。",
+      zhDescription:
+        "我們解構「甜」的概念，透過質地、溫度與時間重塑。每一件作品，都是為了消逝而存在的雕塑。",
       color: "bg-zodiac-concrete",
       text: "text-zinc-300",
       hasFluid: false,
@@ -47,10 +49,12 @@ export default function Home() {
       id: "ingredients",
       title: "Origin",
       subtitle: "Traceable & Wild",
-      description: "Vanilla from Madagascar, Matcha from Uji, Sea Salt from Brittany. We honor the raw imperfections of nature's finest materials.",
+      description:
+        "Vanilla from Madagascar, Matcha from Uji, Sea Salt from Brittany. We honor the raw imperfections of nature's finest materials.",
       zhTitle: "溯源與野性",
       zhSubtitle: "頂級產地",
-      zhDescription: "馬達加斯加的香草、宇治的抹茶、布列塔尼的海鹽。我們以此致敬自然界中最原始且完美的瑕疵。",
+      zhDescription:
+        "馬達加斯加的香草、宇治的抹茶、布列塔尼的海鹽。我們以此致敬自然界中最原始且完美的瑕疵。",
       color: "bg-zinc-900",
       text: "text-zodiac-gold",
       hasFluid: false,
@@ -75,10 +79,10 @@ export default function Home() {
               total={stickySections.length}
               className={`${section.color} flex flex-col items-center justify-center p-8 md:p-24 border-b border-white/5 relative overflow-hidden`}
             >
-              {section.hasFluid && <FluidBackground />}
+              {section.hasFluid && <FluidBackground activeMode={heroMode} />}
 
               {/* Use specialized components for each section */}
-              {section.id === 'hero' ? (
+              {section.id === "hero" ? (
                 <InteractiveHero
                   title={section.title}
                   zhTitle={section.zhTitle}
@@ -86,8 +90,10 @@ export default function Home() {
                   zhSubtitle={section.zhSubtitle}
                   description={section.description}
                   zhDescription={section.zhDescription}
+                  activeMode={heroMode}
+                  onModeChange={setHeroMode}
                 />
-              ) : section.id === 'philosophy' ? (
+              ) : section.id === "philosophy" ? (
                 <PhilosophySection
                   title={section.title}
                   zhTitle={section.zhTitle}
@@ -96,7 +102,7 @@ export default function Home() {
                   description={section.description}
                   zhDescription={section.zhDescription}
                 />
-              ) : section.id === 'ingredients' ? (
+              ) : section.id === "ingredients" ? (
                 <OriginSection
                   title={section.title}
                   zhTitle={section.zhTitle}
@@ -106,13 +112,18 @@ export default function Home() {
                   zhDescription={section.zhDescription}
                 />
               ) : (
-                <div className={`max-w-6xl w-full ${section.text} relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center h-full max-h-[80vh]`}>
-
+                <div
+                  className={`max-w-6xl w-full ${section.text} relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center h-full max-h-[80vh]`}
+                >
                   {/* Left Column: Vertical Line & Subtitle */}
                   <div className="hidden md:flex flex-col items-center col-span-1 h-full justify-center opacity-30 border-r border-current/20 pr-8">
-                    <span className="writing-vertical-rl py-8 text-xs tracking-[0.3em] uppercase rotate-180 transform">{section.subtitle}</span>
+                    <span className="writing-vertical-rl py-8 text-xs tracking-[0.3em] uppercase rotate-180 transform">
+                      {section.subtitle}
+                    </span>
                     <div className="w-px h-24 bg-current" />
-                    <span className="font-mono text-[10px] mt-4">0{index + 1}</span>
+                    <span className="font-mono text-[10px] mt-4">
+                      0{index + 1}
+                    </span>
                   </div>
 
                   {/* Center Content : Asymmetric */}
@@ -124,7 +135,8 @@ export default function Home() {
                       </div>
 
                       <h2 className="md:hidden text-xs tracking-[0.2em] uppercase opacity-70">
-                        {section.subtitle} <span className="mx-2">/</span> {section.zhSubtitle}
+                        {section.subtitle} <span className="mx-2">/</span>{" "}
+                        {section.zhSubtitle}
                       </h2>
                       <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-light tracking-tight leading-[0.85]">
                         {section.title}
@@ -138,14 +150,18 @@ export default function Home() {
 
                     <div className="max-w-xl space-y-6 font-light text-lg md:text-xl opacity-80 pl-0 md:pl-2 leading-relaxed">
                       <p>{section.description}</p>
-                      <p className="font-zh-serif text-base md:text-lg leading-loose opacity-70">{section.zhDescription}</p>
+                      <p className="font-zh-serif text-base md:text-lg leading-loose opacity-70">
+                        {section.zhDescription}
+                      </p>
                     </div>
                   </div>
 
                   {/* Right Column: Decorative Graphic */}
                   <div className="col-span-3 hidden md:flex flex-col justify-end items-end h-full opacity-20 pb-24">
-                    {section.id === 'ingredients' ? (
-                      <div className="text-9xl font-serif rotate-90 origin-right">∗</div>
+                    {section.id === "ingredients" ? (
+                      <div className="text-9xl font-serif rotate-90 origin-right">
+                        ∗
+                      </div>
                     ) : (
                       <div className="w-full h-px bg-current" />
                     )}
@@ -162,8 +178,6 @@ export default function Home() {
         {/* Testimonials Section */}
         <TestimonialsSection />
 
-
-
         {/* Chef Profile Section */}
         <ChefProfile />
 
@@ -178,19 +192,32 @@ export default function Home() {
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xs uppercase tracking-widest opacity-50">{t("footer.visitUs")}</h4>
+              <h4 className="text-xs uppercase tracking-widest opacity-50">
+                {t("footer.visitUs")}
+              </h4>
               <p className="opacity-80">
-                No. 123, Sec. 4, Xinyi Rd.<br />
-                Taipei City, Taiwan 106<br />
-                <span className="text-xs opacity-50 mt-2 block">台北市信義區信義路四段 123 號</span>
+                No. 123, Sec. 4, Xinyi Rd.
+                <br />
+                Taipei City, Taiwan 106
+                <br />
+                <span className="text-xs opacity-50 mt-2 block">
+                  台北市信義區信義路四段 123 號
+                </span>
               </p>
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xs uppercase tracking-widest opacity-50">{t("footer.hours")}</h4>
+              <h4 className="text-xs uppercase tracking-widest opacity-50">
+                {t("footer.hours")}
+              </h4>
               <ul className="opacity-80 space-y-1">
-                <li className="flex justify-between"><span>{t("footer.tueSun")}</span> <span>13:00 - 19:00</span></li>
-                <li className="flex justify-between opacity-50"><span>{t("footer.mon")}</span> <span>{t("footer.closed")}</span></li>
+                <li className="flex justify-between">
+                  <span>{t("footer.tueSun")}</span> <span>13:00 - 19:00</span>
+                </li>
+                <li className="flex justify-between opacity-50">
+                  <span>{t("footer.mon")}</span>{" "}
+                  <span>{t("footer.closed")}</span>
+                </li>
               </ul>
             </div>
           </div>
