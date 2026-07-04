@@ -9,7 +9,7 @@
 # MONOLITH | 地質甜點工作室
 
 [![MIT 授權](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![線上展示](https://img.shields.io/badge/demo-online-green.svg)](https://eugenewu1019.github.io/monolith/)
+[![正式網站](https://img.shields.io/badge/production-GitHub%20Pages-2ea44f.svg)](https://eugenewu1019.github.io/monolith)
 [![設計系統](https://img.shields.io/badge/Design_System-Obsidian-black?style=flat&logo=figma)](DESIGN.zh-TW.md)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=111111)](https://react.dev/)
@@ -17,7 +17,7 @@
 
 **品味的建築。把地質甜點做成可互動的數位展覽。**
 
-[線上展示](https://eugenewu1019.github.io/monolith/) · [設計系統](DESIGN.zh-TW.md) · [Issues](https://github.com/eugenewu1019/monolith/issues)
+[正式網站](https://eugenewu1019.github.io/monolith) · [最新部署](https://github.com/eugenewu1019/monolith/actions/workflows/deploy.yml) · [設計系統](DESIGN.zh-TW.md) · [Issues](https://github.com/eugenewu1019/monolith/issues)
 
 ![Project Banner](public/images/obsidian-tart.png)
 
@@ -138,6 +138,7 @@ npm run lint           # 執行 ESLint
 npm run lint:fix       # 自動修復 ESLint 問題
 npm run format         # 使用 Prettier 格式化支援的檔案
 npm run type-check     # 執行 TypeScript 型別檢查
+npm run docs:check     # 驗證 README 連結與正式網站入口
 npm test               # 執行 Jest 測試
 npm run test:watch     # 使用 watch 模式執行 Jest
 npm run test:coverage  # 產生測試覆蓋率報告
@@ -171,6 +172,7 @@ V1.5 升級已用以下方式驗證：
 
 - `npm run lint`
 - `npm run type-check`
+- `npm run docs:check`
 - `npm test -- --runInBand`
 - `npm run build`
 - Playwright 互動檢查：Hero 模式切換、藝廊卡片點擊、測驗彈窗、評論切換按鈕、導航列對比、reduced-motion fallback。

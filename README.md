@@ -9,7 +9,7 @@
 # MONOLITH | Geological Pastry Lab
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://eugenewu1019.github.io/monolith/)
+[![Production](https://img.shields.io/badge/production-GitHub%20Pages-2ea44f.svg)](https://eugenewu1019.github.io/monolith)
 [![Design System](https://img.shields.io/badge/Design_System-Obsidian-black?style=flat&logo=figma)](DESIGN.md)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=111111)](https://react.dev/)
@@ -17,7 +17,7 @@
 
 **Architecture of taste. Geological dessert as an interactive digital exhibit.**
 
-[Live Demo](https://eugenewu1019.github.io/monolith/) · [Design System](DESIGN.md) · [Issues](https://github.com/eugenewu1019/monolith/issues)
+[Production Site](https://eugenewu1019.github.io/monolith) · [Latest Deploy](https://github.com/eugenewu1019/monolith/actions/workflows/deploy.yml) · [Design System](DESIGN.md) · [Issues](https://github.com/eugenewu1019/monolith/issues)
 
 ![Project Banner](public/images/obsidian-tart.png)
 
@@ -138,6 +138,7 @@ npm run lint           # Run ESLint
 npm run lint:fix       # Fix ESLint issues
 npm run format         # Format supported files with Prettier
 npm run type-check     # Run TypeScript without emitting files
+npm run docs:check     # Verify README links and production entry points
 npm test               # Run Jest tests
 npm run test:watch     # Run Jest in watch mode
 npm run test:coverage  # Generate coverage output
@@ -170,6 +171,7 @@ The V1.5 upgrade was verified with:
 
 - `npm run lint`
 - `npm run type-check`
+- `npm run docs:check`
 - `npm test -- --runInBand`
 - `npm run build`
 - Playwright interaction checks for hero modes, gallery card clicks, quiz modal behavior, testimonial controls, header contrast, and reduced-motion fallback.
